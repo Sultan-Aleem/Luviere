@@ -7,11 +7,17 @@ const Hero = () => {
       className="relative bg-heroBg min-h-screen overflow-x-hidden mx-auto flex items-center"
       id="home"
     >
-      <img
+      <motion.img
         src={Img}
         alt="Elegant woman wearing gold jewellery from Luviere collection"
         className="absolute right-0 top-0 h-full object-cover z-10 w-auto "
         loading="eager"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-heroBg via-heroBg/20 to-transparent z-15" />
       <motion.div
