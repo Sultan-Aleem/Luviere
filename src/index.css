@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-fraunces: "Fraunces", serif;
+  --font-didot: "GFS Didot", serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-heroBg: var(--hero-bg);
+  --color-textGreen: var(--text-green);
+  --color-expBtn: var(--exp-btn);
+  --color-shopColor: var(--shop-color);
+  --color-footer: var(--footer);
+  --color-subFooter: var(--sub-footer);
+  --color-black: var(--black);
+}
+@layer base {
+  :root {
+    --hero-bg: #f0d2ae;
+    --black: #000000;
+    --exp-btn: #414141;
+    --shop-color: #dbdbdb;
+    --text-green: #084200;
+    --footer: #121420;
+    --sub-footer: #141824;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@utility background-image {
+  @apply w-full   bg-[url('./assets/images/Watch.jpeg')] bg-blend-difference bg-no-repeat bg-center bg-cover;
+}
+
+@utility greenButton {
+  @apply text-white font-bold bg-textGreen py-3 px-5 rounded-3xl tracking-wide;
+}
