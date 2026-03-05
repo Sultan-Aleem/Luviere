@@ -4,7 +4,7 @@ import Img from "../assets/images/hero-image-removebg-preview.png";
 const Hero = () => {
   return (
     <section
-      className="relative bg-heroBg min-h-screen overflow-x-hidden mx-auto flex items-center"
+      className="relative bg-heroBg min-h-[90vh] md:min-h-screen overflow-x-hidden mx-auto flex items-center"
       id="home"
     >
       <motion.img
