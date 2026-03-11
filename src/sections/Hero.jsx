@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Img from "../assets/images/hero-image-removebg-preview.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -42,14 +43,15 @@ const Hero = () => {
           >
             Shop now
           </a>
-          <a
-            href=""
-            className="bg-transparent text-[#414141] px-3 py-2 md:px-6 md:py-3 rounded-full border-2 border-white font-extrabold md:font-bold md:tracking-wider text-[14px] md:text-[18px]
+          <Link to="/shop">
+            <button
+              className="bg-transparent text-[#414141] px-3 py-2 md:px-6 md:py-3 rounded-full border-2 border-white font-extrabold md:font-bold md:tracking-wider text-[14px] md:text-[18px]
             hover:bg-white hover:text-black hover:border-white transition-colors
             duration-300 ease-in-out flex flex-shrink-0 items-center justify-center shadow-md hover:shadow-lg"
-          >
-            Explore New Collection
-          </a>
+            >
+              Explore New Collection
+            </button>
+          </Link>
         </div>
       </motion.div>
     </section>

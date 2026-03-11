@@ -36,12 +36,16 @@ const ShopHeader = ({ onCategorySelect, onSearch }) => {
               onClick={() => setShowCategory((prev) => !prev)}
               className="pl-3"
             >
-              <img src={SearchIcon} alt="Category icon" className="w-5 h-5" />
+              <img
+                src={SearchIcon}
+                alt="Category icon"
+                className=" object-contain"
+              />
             </button>
           </div>
 
           {/* Search bar */}
-          <div className="flex gap-x-3 md:w-[40%]  ">
+          <div className="flex gap-x-3 md:w-[40%]  w-[90%]">
             <SearchBar onSearch={handleSearch} />
           </div>
         </div>
