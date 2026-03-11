@@ -31,7 +31,7 @@ const navList = [
   },
   {
     name: "Shop",
-    href: "#shop",
+    href: "/shop",
     icon: ShoppingBag,
   },
   {
@@ -146,6 +146,26 @@ const footerIcons = [
   },
 ];
 
+// Shop now
+
+const categories = [
+  {
+    name: "New",
+  },
+  {
+    name: "Earrings",
+  },
+  {
+    name: "Necklace",
+  },
+  {
+    name: "Bracelets",
+  },
+  {
+    name: "Rings",
+  },
+];
+
 export {
   navList,
   links,
@@ -154,4 +174,5 @@ export {
   offerSection,
   footerLinks,
   footerIcons,
+  categories,
 };

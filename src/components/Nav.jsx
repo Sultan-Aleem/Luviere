@@ -1,24 +1,31 @@
 import { MenuIcon } from "lucide-react";
 import { links, navList } from "../lib";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { ShoppingCart } from "lucide-react";
+
 import { useState } from "react";
 import { cn } from "../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useLocation } from "react-router-dom";
 import { CgClose, CgCloseR } from "react-icons/cg";
+import { Link } from "react-router-dom";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const location = useLocation();
+  const isShopPage = location.pathname === "/shop";
 
   return (
     <nav className="w-full fixed inset-x-0 top-0 left-0 z-50 shadow-md ">
       {/* desktop */}
-      <div className="hidden md:flex items-center  md:gap-x-12 justify-start px-7 md:py-5 lg:py-5.5 bg-white font-inter gap-x-5 py-4 cursor-pointer">
+      <div className="hidden md:flex items-center  md:gap-x-12 justify-start px-7 md:py-5 lg:py-5.5 bg-white font-inter gap-x-5 py-4 cursor-pointer ">
         {/* logo */}
         <div className=" ">
-          <h1 className="font-semibold text-2xl md:text-md tracking-[2px] font-inter ">
-            Luviere’
-          </h1>
+          <Link to="/">
+            <h1 className="font-semibold text-2xl md:text-md tracking-[2px] font-inter ">
+              Luviere’
+            </h1>
+          </Link>
         </div>
         <ul className="flex space-x-5 lg:space-x-18 md:space-x-12  ">
           {navList.map((item, index) => (
@@ -32,11 +39,23 @@ const Nav = () => {
             </li>
           ))}
         </ul>
-        <div className="bg-textGreen py-3 px-5 rounded-3xl  ">
-          <a href="" className="text-white font-bold text-md tracking-wide">
-            shop now
-          </a>
-        </div>
+        {isShopPage ? (
+          <Link to="/cart" className="ml-auto">
+            <HiOutlineShoppingCart
+              size={28}
+              className="cursor-pointer hover:text-textGreen transition    "
+            />
+          </Link>
+        ) : (
+          <div className="bg-textGreen py-3 px-5 rounded-3xl  ">
+            <Link
+              to="/shop"
+              className="text-white font-bold text-md tracking-wide"
+            >
+              shop now
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* mobile */}
@@ -44,12 +63,14 @@ const Nav = () => {
         <div className="flex items-center justify-between px-5 py-5.5 bg-white">
           {/* logo */}
           <div>
-            <a
-              className="font-semibold text-md md:text-md tracking-[2px] font-inter cursor-pointer"
-              href="#home"
-            >
-              Luviere’
-            </a>
+            <Link to="/">
+              <a
+                className="font-semibold text-md md:text-md tracking-[2px] font-inter cursor-pointer"
+                href="#home"
+              >
+                Luviere’
+              </a>
+            </Link>
           </div>
           <div>
             {navOpen ? (
@@ -85,9 +106,9 @@ const Nav = () => {
                 );
               })}
 
-              <div className="flex items-center gap-x-2 ">
+              <div className="flex items-center gap-x-2">
                 <HiOutlineShoppingCart size={20} />
-                <a>Cart</a>
+                <Link to="/cart">Cart</Link>
               </div>
 
               {/* links */}

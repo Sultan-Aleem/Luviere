@@ -41,6 +41,10 @@
   @apply w-full   bg-[url('./assets/images/Watch.jpeg')] bg-blend-difference bg-no-repeat bg-center bg-cover;
 }
 
+@utility shopBg {
+  @apply w-full  bg-[url('./assets/images/Shopnow/shopBg.jpg')] bg-blend-difference bg-no-repeat bg-center bg-cover h-full;
+}
+
 @utility greenButton {
   @apply text-white font-bold bg-textGreen py-3 px-5 rounded-3xl tracking-wide;
 }
