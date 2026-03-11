@@ -94,13 +94,20 @@ const Nav = () => {
             >
               {navList.map((item, index) => {
                 const Icon = item.icon;
+                const isInternal = item.href.startsWith("/");
                 return (
                   <li key={index}>
                     <div className="flex items-center gap-x-2 ">
                       <Icon size={20} />
-                      <a href={item.href} className="font-medium">
-                        {item.name}
-                      </a>
+                      {isInternal ? (
+                        <Link to={item.href} className="font-medium">
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <a href={item.href} className="font-medium">
+                          {item.name}
+                        </a>
+                      )}
                     </div>
                   </li>
                 );
