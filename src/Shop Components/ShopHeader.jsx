@@ -31,12 +31,12 @@ const ShopHeader = ({ onCategorySelect, onSearch }) => {
             Only the best for you.
           </h3>
           {/* mobile icon */}
-          <div className="relative md:hidden ">
+          <div className="relative md:hidden pr-1.5">
             <button
               onClick={() => setShowCategory((prev) => !prev)}
               className="pl-3"
             >
-              <img src={SearchIcon} alt="Category icon" />
+              <img src={SearchIcon} alt="Category icon" className="w-5 h-5" />
             </button>
           </div>
 
